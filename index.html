@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Car Rental - Rent Your Dream Car</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="logo">Royal Car Rental</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#booking" class="nav-link">Booking</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌓</button>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Rent Your Dream Car</h1>
+                <p>Experience premium car rental with seamless booking. Discover luxury vehicles tailored to your needs.</p>
+                <a href="#booking" class="btn btn-primary">Book Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="im/image.png" alt="Royal Car Rental Fleet" class="hero-fleet-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="about-container">
+            <div class="about-header">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">Your trusted partner in premium car rental experiences</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-main">
+                    <div class="about-card glass-card">
+                        <div class="card-icon">🚗</div>
+                        <h3>Premium Fleet</h3>
+                        <p>We offer a curated selection of luxury and performance vehicles from top brands worldwide. Every car in our fleet is meticulously maintained and regularly inspected.</p>
+                    </div>
+
+                    <div class="about-card glass-card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Instant Booking</h3>
+                        <p>Book your dream car in minutes with our streamlined booking process. No hidden fees, transparent pricing, and flexible rental periods to suit your needs.</p>
+                    </div>
+
+                    <div class="about-card glass-card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>24/7 Support</h3>
+                        <p>Our dedicated support team is available around the clock to assist you with any questions or concerns. Your satisfaction is our priority.</p>
+                    </div>
+
+                    <div class="about-card glass-card">
+                        <div class="card-icon">⭐</div>
+                        <h3>Best Prices</h3>
+                        <p>Competitive rates with no surprise charges. We believe in fair, transparent pricing that gives you the best value for your money.</p>
+                    </div>
+                </div>
+
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-number">01</div>
+                        <div class="feature-content">
+                            <h4>Easy Booking Process</h4>
+                            <p>Simple, intuitive interface that makes renting a car effortless</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-number">02</div>
+                        <div class="feature-content">
+                            <h4>Wide Selection</h4>
+                            <p>From economy to luxury, we have the perfect vehicle for every occasion</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-number">03</div>
+                        <div class="feature-content">
+                            <h4>Flexible Options</h4>
+                            <p>Daily, weekly, and monthly rental options with customizable packages</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-number">04</div>
+                        <div class="feature-content">
+                            <h4>Trusted Service</h4>
+                            <p>Thousands of satisfied customers trust us for their transportation needs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-number" data-target="5000">0</div>
+                        <div class="stat-text">Happy Customers</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">🚙</div>
+                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-text">Premium Vehicles</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-number" data-target="4.9">0</div>
+                        <div class="stat-text">Average Rating</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">📍</div>
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-text">Locations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section">
+        <h2 class="section-title">Book Your Car</h2>
+        <p class="section-subtitle">Fill out the form below to reserve your vehicle</p>
+        <div class="booking-section-content">
+            <button class="btn btn-primary" onclick="openBookingModal()">Open Booking Form</button>
+        </div>
+        
+        <!-- Bookings Table -->
+        <div class="bookings-table-container" id="bookingsTableContainer" style="display: none;">
+            <h3 class="bookings-table-title">Your Bookings</h3>
+            <table class="bookings-table" id="bookingsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Car Model</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Days</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingsTableBody">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Connect With Us</h2>
+        <p class="section-subtitle">Have questions? Our AI-powered support team is here to help</p>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="contactName">Name</label>
+                <input type="text" id="contactName" required>
+            </div>
+            <div class="form-group">
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message →</button>
+        </form>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Reserve Vehicle</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="modalCarName">Car Model</label>
+                    <input type="text" id="modalCarName" placeholder="Enter car model" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerName">Your Name</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number</label>
+                    <input type="tel" id="customerPhone" placeholder="+252 61 12345678" required>
+                    <div class="error-message" id="phoneError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" required>
+                    <div class="error-message" id="startDateError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" required>
+                    <div class="error-message" id="endDateError"></div>
+                </div>
+                <div class="total-price">
+                    <div class="total-price-label">Total Price</div>
+                    <div class="total-price-value" id="totalPrice">$0</div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Reservation</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Loading Spinner -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading Premium Experience...</p>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h3>Royal Car Rental</h3>
+                        <p>Your trusted partner for premium car rental experiences. Drive your dreams with us.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Luxury Rentals</a></li>
+                        <li><a href="#">Business Rentals</a></li>
+                        <li><a href="#">Long-term Leasing</a></li>
+                        <li><a href="#">Airport Pickup</a></li>
+                        <li><a href="#">24/7 Roadside Assistance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p class="footer-newsletter-text">Subscribe to get special offers and updates</p>
+                    <form class="footer-newsletter" id="newsletterForm">
+                        <div class="newsletter-input-group">
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="newsletter-error" id="newsletterError"></div>
+                    </form>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span>info@royalcarrental.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Royal Car Rental. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
